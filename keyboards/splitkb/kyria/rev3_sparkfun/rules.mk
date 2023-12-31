@@ -1,0 +1,7 @@
+# Sparkfun Pro Micro C Qwiic
+BOOTLOADER = caterina
+
+OLED_ENABLE = no
+ENCODER_ENABLE = no
+RGB_MATRIX_ENABLE = no
+RGBLIGHT_ENABLE = no
