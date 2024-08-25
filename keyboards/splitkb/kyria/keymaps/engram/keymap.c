@@ -46,19 +46,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-------------------------------------------.                               ,-------------------------------------------.
  * |  Tab   |   V  |   W  |   D  |   L  |   Z  |                               |   Q  |   U  |   O  |   Y  |   B  |        |
  * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
- * | LShift |   N  |   S  |   T  |   H  |   ,  |                               |   .  |   A  |   E  |   I  |   C  |        |
+ * |  LAlt  |   N  |   S  |   T  |   H  |   ,  |                               |   .  |   A  |   E  |   I  |   C  |  RAlt  |
  * |--------+------+------+------+------+------+-------------.  ,--------------+------+------+------+------+------+--------|
- * |  LCmd  |   P  |   F  |   M  |   R  |  ; : |  Lock |KP_ATM|  |      |      |  ' " |   K  |   J  |   X  |   G  |        |
+ * |  LCmd  |   P  |   F  |   M  |   R  |  ; : | KP_ATM| Lock |  |      |      |  ' " |   K  |   J  |   X  |   G  |  RCmd  |
  * `----------------------+------+------+------+-------+------|  |------+------+------+------+------+----------------------'
- *                        | LCtl | LAlt | Space| Enter | Esc  |  | Bspc | Enter| Space|  SYM | RCtl |
- *                        |      |      |  NAV | LCmd  |      |  |      | RShft|  SYM |      |      |
+ *                        | LCtl | NAV  | Space| Enter | Esc  |  | Bspc | Enter| Space|  SYM | RCtl |
+ *                        |      |      |  NAV | LShft |      |  |      | RShft|  SYM |      |      |
  *                        `-----------------------------------'  `----------------------------------'
  */
     [_ENGRAM] = LAYOUT(
      KC_TAB , KC_V , KC_W , KC_D  , KC_L   ,  KC_Z        ,                                                  KC_Q  ,   KC_U ,  KC_O ,   KC_Y ,  KC_B , XXXXXXX,
-     KC_LSFT, KC_N , KC_S , KC_T  , KC_H   ,  KC_COMM     ,                                                 KC_DOT ,   KC_A ,  KC_E ,   KC_I ,  KC_C , XXXXXXX,
-     KC_LGUI, KC_P , KC_F , KC_M  , KC_R   ,  KC_SCLN     ,    LCK_MAC   , KP_ATM , XXXXXXX, XXXXXXX,       KC_QUOT,   KC_K ,  KC_J ,   KC_X ,  KC_G , XXXXXXX,
-                           KC_LCTL, KC_LALT,LT(NAV,KC_SPC),LGUI_T(KC_ENT), KC_ESC , KC_BSPC, SC_SENT,LT(SYM,KC_SPC),TG(_SYM),KC_RCTL
+     KC_LALT, KC_N , KC_S , KC_T  , KC_H   ,  KC_COMM     ,                                                 KC_DOT ,   KC_A ,  KC_E ,   KC_I ,  KC_C , KC_RALT,
+     KC_LGUI, KC_P , KC_F , KC_M  , KC_R   ,  KC_SCLN     ,    KP_ATM    , LCK_MAC, XXXXXXX, XXXXXXX,       KC_QUOT,   KC_K ,  KC_J ,   KC_X ,  KC_G , KC_RGUI,
+                           KC_LCTL,TG(_NAV),LT(NAV,KC_SPC),LSFT_T(KC_ENT), KC_ESC , KC_BSPC, SC_SENT,LT(SYM,KC_SPC),TG(_SYM),KC_RCTL
     ),
 
 /*
@@ -67,19 +67,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-------------------------------------------.                               ,-------------------------------------------.
  * |  Tab   |   V  |   W  |   D  |   L  |   Z  |                               |   Q  |   U  |   O  |   Y  |   B  |        |
  * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
- * | LShift |   N  |   S  |   T  |   H  |   ,  |                               |   .  |   A  |   E  |   I  |   C  |        |
+ * |  LAlt  |   N  |   S  |   T  |   H  |   ,  |                               |   .  |   A  |   E  |   I  |   C  |  RAlt  |
  * |--------+------+------+------+------+------+-------------.  ,--------------+------+------+------+------+------+--------|
- * | LCtrl  |   P  |   F  |   M  |   R  |  ; : |  Lock |KP_ATW|  |      |      |  ' " |   K  |   J  |   X  |   G  |        |
+ * | LCtrl  |   P  |   F  |   M  |   R  |  ; : | KP_ATW| Lock |  | Del  |      |  ' " |   K  |   J  |   X  |   G  |  RCtrl |
  * `----------------------+------+------+------+-------+------|  |------+------+------+------+------+----------------------'
- *                        | LCtl | LAlt | Space| Enter | Esc  |  | Bspc | Enter| Space|  SYM | RCtl |
- *                        |      |      |  NAV | LCmd  |      |  |      | RShft|  SYM |      |      |
+ *                        | LCtl | NAV  | Space| Enter | Esc  |  | Bspc | Enter| Space|  SYM | RCtl |
+ *                        |      |      |  NAV | LShft |      |  |      | RShft|  SYM |      |      |
  *                        `-----------------------------------'  `----------------------------------'
  */
     [_ENGRMW] = LAYOUT(
-     KC_TAB , KC_V , KC_W , KC_D  , KC_L   ,  KC_Z        ,                                                  KC_Q  ,   KC_U ,  KC_O ,   KC_Y ,  KC_B , XXXXXXX,
-     KC_LSFT, KC_N , KC_S , KC_T  , KC_H   ,  KC_COMM     ,                                                 KC_DOT ,   KC_A ,  KC_E ,   KC_I ,  KC_C , XXXXXXX,
-     KC_LCTL, KC_P , KC_F , KC_M  , KC_R   ,  KC_SCLN     ,  LWIN(KC_L)  , KP_ATW , XXXXXXX, XXXXXXX,       KC_QUOT,   KC_K ,  KC_J ,   KC_X ,  KC_G , XXXXXXX,
-                           KC_LGUI, KC_LALT,LT(NAV,KC_SPC),LCTL_T(KC_ENT), KC_ESC , KC_BSPC, SC_SENT,LT(SYM,KC_SPC),TG(_SYM),KC_RCTL
+     KC_TAB , KC_V , KC_W , KC_D  , KC_L   ,  KC_Z        ,                                                    KC_Q  ,   KC_U ,  KC_O ,   KC_Y ,  KC_B , XXXXXXX,
+     KC_LALT, KC_N , KC_S , KC_T  , KC_H   ,  KC_COMM     ,                                                   KC_DOT ,   KC_A ,  KC_E ,   KC_I ,  KC_C , KC_RALT,
+     KC_LCTL, KC_P , KC_F , KC_M  , KC_R   ,  KC_SCLN     ,   KP_ATW     ,LWIN(KC_L), KC_DEL , XXXXXXX,       KC_QUOT,   KC_K ,  KC_J ,   KC_X ,  KC_G , KC_RCTL,
+                           KC_LGUI,TG(_NAV),LT(NAV,KC_SPC),LSFT_T(KC_ENT), KC_ESC   , KC_BSPC, SC_SENT,LT(SYM,KC_SPC),TG(_SYM),KC_RCTL
     ),
 
 /*
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |        |      |   7  |   8  |   9  |ENGRAM|                              |ENGRMW| Home |  Up  | PgUp |      | VolUp  |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |      |   4  |   5  |   6  |      |                              |      | Left | Down | Right|Capslk| VolDn  |
+ * |        |      |   4  |   5  |   6  |  ,   |                              |   .  | Left | Down | Right|Capslk| VolDn  |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * |        |   0  |   1  |   2  |   3  |      |      |      |  |      |      |      |  End |      | PgDn |      | VolMut |
  * `----------------------+------+------+------+------+------|  |------+------+-------+------+------+----------------------'
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_SYM] = LAYOUT(
-      _______, KC_BSLS, KC_LT , KC_LCBR, KC_LBRC, KC_LPRN,                                     KC_PIPE, KC_RBRC, KC_RCBR,  KC_GT , KC_SLSH, KC_CIRC,
+      _______, KC_BSLS, KC_LT , KC_LCBR, KC_LBRC, KC_LPRN,                                     KC_RPRN, KC_RBRC, KC_RCBR,  KC_GT , KC_SLSH, KC_CIRC,
       _______, KC_EXLM, KC_AT , KC_HASH,  KC_DLR, _______,                                     _______, KC_AMPR, KC_ASTR, KC_PIPE, KC_QUES, KC_PERC,
       _______, KC_PLUS, KC_EQL, KC_GRV , KC_MINS, _______, _______, _______, _______, _______, _______, KC_UNDS, KC_TILD, UC(8364), _______, _______,
                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
